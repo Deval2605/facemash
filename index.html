@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facemash | Share Your Profile</title>
+    <meta name="description"
+        content="Facemash - A simple local platform to upload and share your profile with others effortlessly.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="hero-section">
+            <h1 data-text="Facemash">Facemash</h1>
+            <p class="subtitle">Express yourself. Share your identity locally.</p>
+        </header>
+
+        <section class="upload-section">
+            <div class="upload-card">
+                <h2>Create Your Profile</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Profile Picture</label>
+                            <div class="file-input-wrapper">
+                                <button type="button" class="btn-secondary" id="custom-file-btn">Choose Image</button>
+                                <input type="file" id="image" accept="image/*" required hidden>
+                                <span id="file-chosen">No file chosen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Short Description</label>
+                        <textarea id="description" rows="3" required></textarea>
+                    </div>
+
+                    <div id="image-preview-container" class="hidden">
+                        <img id="image-preview" src="" alt="Preview">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Upload Profile</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="profiles-section">
+            <div class="section-header">
+                <h2>Recent Profiles</h2>
+                <div class="divider"></div>
+            </div>
+            <div id="profiles-grid" class="profiles-grid">
+                <!-- Profiles will be injected here -->
+                <div class="empty-state">
+                    <p>No profiles yet. Be the first to upload one!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
